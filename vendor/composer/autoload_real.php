@@ -38,7 +38,7 @@ class ComposerAutoloaderInitee310975ccacef8143ccf367bcf2d8de
 
         $loader->register(true);
 
-        require $vendorDir . '/kriswallsmith/Assetic/Asset/src/functions.php';
+        require $vendorDir . '/kriswallsmith/assetic/src/functions.php';
 
         return $loader;
     }
