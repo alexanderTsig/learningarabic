@@ -6,6 +6,10 @@
 #
 # http://www.slimframework.com/read/skeleton-application)
 
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
+
 require_once '../vendor/autoload.php';
 require_once 'class/autoload.php';
 require_once 'amember4/library/Am/Lite.php';
