@@ -1,0 +1,48 @@
+<?php
+
+$twigPath = '/var/www/portal.pathtoarabic.com/public/register/templates';
+$twigTemplate = 'register.twig';
+//$membershipExpired = false;
+
+if (Am_Lite::getInstance()->isLoggedIn()) {
+    if (Am_Lite::getInstance()->isUserActive()) {
+		$twigPath = '/var/www/portal.pathtoarabic.com/templates';
+		$twigTemplate = 'membership.twig';
+		//$membershipExpired = false;
+    }
+    elseif (Am_Lite::getInstance()->hadSubscriptions(Am_Lite::ANY)) {
+		$twigPath = '/var/www/portal.pathtoarabic.com/templates';
+		$twigTemplate = 'membership.twig';
+        //$membershipExpired = true;
+    }
+}
+
+ob_start();
+include $this->_script('_top.phtml');
+$top = ob_get_contents();
+ob_end_clean();
+
+ob_start();
+$this->printLayoutHead(true, true);
+$amember_head = ob_get_contents();
+ob_end_clean();
+
+// Import Twig so as to avoid re-inventing the wheel (and because aMember's page templating system is awful)
+require_once '/var/www/portal.pathtoarabic.com/vendor/autoload.php';
+
+$loader = new Twig_Loader_Filesystem($twigPath);
+$twig = new Twig_Environment($loader, [
+	'cache'       => false,
+	'auto_reload' => true
+]);
+
+$username = Am_Di::getInstance()->auth->getUser()->login;
+
+echo $twig->render($twigTemplate, [
+	amember_top     => $top,
+	amember_head    => $amember_head,
+	amember_content => $content,
+	get_msg         => $_GET['_msg'],
+	username        => $username
+	//expired         => $membershipExpired
+]);

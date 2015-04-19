@@ -1,0 +1,41 @@
+{% extends pjax == true ? "fragment.twig" : "learning_base.twig" %}
+
+{% block template %}exam{% endblock %}
+
+{% import "macro/panels.twig" as panel %}
+
+{% block title %}Level {{ level }} &gt; Lesson {{ lesson }} &gt; Exam{% endblock %}
+
+{% block learningcontent %}
+    {{ parent() }}
+    <div class="span12">
+        <div id="alert" class="alert" style="display:none"></div>
+        <!-- Original dimensions = 720x540 -->
+        <div id="quiz" data-url="{{ movie }}" data-nonce="{{ nonce }}"></div>
+    </div>
+    <div id="review" class="modal hide">
+            <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h3>Reading/Conversation Review</h3>
+            </div>
+
+            <div class="modal-body">
+                    <div id="review-player" style="width:720px;height:540px"></div>
+            </div>
+
+            <div class="modal-footer">
+                    <button class="btn">Return to Exam</button>
+            </div>
+    </div>
+{% endblock %}
+{% block notecontent %}
+    {{ parent() }}    
+    <div id="" class="span12">
+        <div class="">
+            <header style="margin-bottom:1em"><i class="icon-pencil icon-white"></i>&nbsp;My Notes</header>
+            <form>
+                <textarea id="note" style="resize:vertical" class="input-block-level" rows="5"></textarea>
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% import "panels.html" as panel %}
+
+{% block title %}Level {{ level }} &gt; Lesson {{ lesson }} &gt; Exercise{% endblock %}
+
+{% block maincontent %}
+	{% include 'lesson_tabs.html' %}
+
+	<div class="row-fluid">
+		<div class="span9">
+			<div id="exercise">test</div>
+		</div>
+
+		<div id="sidebar" class="span3">
+			{{ panel.notes }}
+		</div>
+	</div>
+{% endblock %}
+
+{% block javascript %}
+	{{ parent() }}
+
+	<script src="/js/jquery.ba-dotimeout.min.js"></script>
+
+	<script>
+		var params = {
+			allowScriptAccess: "sameDomain",
+			scale:             "default",
+			quality:           "best",
+			bgcolor:           "#ffffff",
+			wmode:             "direct"
+		}
+
+		swfobject.embedSWF("{{ movie }}", "exercise", "600", "450", "10.1.0", "playerProductInstall.swf", {}, params);
+	</script>
+
+	<script>
+		var movie = $('#exercise');
+
+		function resizePlayer() {
+			// Resize the player according to available width
+			movie.attr('width', movie.parent('div').width());
+
+			// Set height based on 4/3 aspect ratio
+			movie.attr('height', Math.round(movie.width() * 3 / 4).toString());
+
+			// Ensure that the Flash object is visible again
+			movie.css('visibility', 'visible').css('display', 'block');
+		}
+
+		$(document).ready(function() {
+			// Activate the correct tab and disable its click action
+			$('li.exercise').attr('class', 'active').click(false);
+
+			// Resize the player now that the document is ready
+			resizePlayer();
+
+			$(window).resize(function() {
+				// Render the Flash object invisible (otherwise it will lock up and crash)
+				movie.css('visibility', 'hidden');
+
+				// Debounce resize events within a 250ms timeframe before doing anything
+				$.doTimeout('resize', 250, function() {
+					resizePlayer();
+				});
+			});
+		});
+	</script>
+
+{% endblock %}

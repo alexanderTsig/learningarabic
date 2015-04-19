@@ -1,0 +1,25 @@
+{% extends "skel.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block body %}
+	<div class="row-fluid">
+		<div class="span3"></div>
+
+		<div class="span6">
+			<form style="padding:3em 4em" class="well" method="POST" action="{{ loginurl }}">
+				<label for="form-amember_login">Username</label>
+				<input type="text" class="span12" name="amember_login" id="form-amember_login">
+
+				<label for="form-amember_pass">Password</label>
+				<input type="password" class="span12" name="amember_pass" id="form-amember_pass">
+
+				<button type="submit" class="btn">Login</button>
+
+				<a style="display:block;margin-top:1em" href="#">Can't access your account?</a>
+			</form>
+		</div>
+
+		<div class="span3"></div>
+	</div>
+{% endblock %}

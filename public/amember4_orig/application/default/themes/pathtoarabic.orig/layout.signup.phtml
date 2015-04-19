@@ -1,0 +1,97 @@
+<?php
+
+// Import Twig so as to avoid re-inventing the wheel (and because aMember's page templating system is awful)
+require_once '/var/www/portal.pathtoarabic.com/vendor/autoload.php';
+
+$loader = new Twig_Loader_Filesystem('/var/www/portal.pathtoarabic.com/public/register/templates');
+$twig = new Twig_Environment($loader, array(
+	'cache'       => false,
+	'auto_reload' => true
+));
+
+echo $twig->render('register.html', array(
+	amember_content => $content,
+	get_msg         => $_GET['msg']
+));
+
+/* <html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title><?php echo $title ?></title>
+		<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+        <?php $this->printLayoutHead(); ?>
+    </head>
+
+    <body>
+        <?php echo $this->placeholder('body-start'); ?>
+
+		<!-- <div class="am-body"> -->
+			<div class="am-body-content-wrapper am-main">
+				<div class="am-body-content">
+					<?php $this->blocks('content/before'); ?>
+					<?php include $this->_script('_top.phtml'); ?>
+					<?php if (empty($this->layoutNoTitle)): ?>
+						<h1><?php echo $title ?></h1>
+					<?php endif; ?>
+					<!-- content starts here -->
+
+					<?php
+						$message = $_GET['_msg'];
+						if ($message !== null)
+							echo "<div class=\"alert alert-success\">$message</div>";
+					?>
+					<div style="display:none" class="alert alert-error"></div>
+
+					<?php echo $content ?>
+					
+				</div>
+			</div>
+		<!-- </div> -->
+
+        <?php echo $this->render('_popup.phtml'); ?>
+        <?php echo $this->placeholder('body-finish'); ?>
+
+<script>
+	$(document).ready(function() {
+		$(".am-main table").addClass("table table-condensed table-striped");
+			
+		$(".am-form input[type=submit]").addClass("btn btn-primary btn-large");
+		
+		$(".am-block").addClass("well");
+		
+		$(".am-form div[id^=row]").removeClass("row");
+		
+		$("#menu-member").parent('li').empty();
+
+		$("span.error").each(function() {
+			$("div.alert-error").show();
+			$("div.alert-error").html("<ul></ul>");
+			$("div.alert-error > ul").append("<li>" + $(this).text() + "</li>");
+		});
+
+		// Enable drop-down menu for affiliate options
+		$("li.has-children").each(function() {
+			$(this).addClass("dropdown").css("position", "relative");
+			$("#menu-aff").addClass("dropdown-toggle").attr("data-toggle", "dropdown").attr("href", "#").append('&nbsp;<b class="caret"></b>');
+			// $(this).find("div.arrow").remove();
+			$(this).children("ul").addClass("dropdown-menu");
+		});
+
+		// Fix forms
+		$(".am-form > form").addClass("form-horizontal");
+		$(".am-form div[id^=row]").addClass("control-group").find("br").remove();
+		$(".am-form label:not([class])").addClass("control-label");
+		$(".am-form div.element").addClass("controls");
+		$(".am-form div.element-title").each(function() {
+			$(this).replaceWith($(this).html());
+		});
+		$(".am-form label[class=radio]").find("br").remove();
+		
+		//$(".am-form input").addClass("span12");
+	});
+</script>
+
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.js"></script>
+
+</body>
+</html> */

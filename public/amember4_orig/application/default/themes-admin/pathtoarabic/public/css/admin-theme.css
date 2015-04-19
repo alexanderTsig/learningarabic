@@ -1,0 +1,3 @@
+/* Get rid of the footer, as requested by Ahmed */
+
+#footer { display:none; }

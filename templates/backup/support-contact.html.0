@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+
+{% block title %}Support : Contact Us{% endblock %}
+
+{% block maincontent %}
+
+<div class="navbar">
+    <div class="navbar-inner">
+        <a class="brand" href="/support">Help &amp; Support</a>
+
+        <ul class="nav">
+            <li><a href="/support/faq">FAQ</a></li>
+            <li><a href="/support/tutorials">Video Tutorials</a></li>
+            <li class="active"><a href="/support/contact">Contact Support</a></li>
+            <li><a href="/support/feedback">Send Feedback</a></li>
+        </ul>
+    </div>
+</div>
+
+<form class="form-horizontal ell" data-nonce="{{ nonce }}">
+	<!-- <fieldset>
+		<legend>Tell us about yourself</legend>
+
+		<div class="control-group">
+			<label class="control-label" for="firstname">First Name</label>
+			<div class="controls">
+				<input type="text" id="firstname" placeholder="(required)">
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label class="control-label" for="surname">Last Name</label>
+			<div class="controls">
+				<input type="text" id="surname" placeholder="(required)">
+			</div>
+		</div>
+		
+		<div class="control-group">
+			<label class="control-label" for="title">Job Title</label>
+			<div class="controls">
+				<input type="text" id="title" placeholder="(optional)">
+			</div>
+		</div>
+		
+		<div class="control-group">
+			<label class="control-label" for="company">Company</label>
+			<div class="controls">
+				<input type="text" id="company" placeholder="(optional)">
+			</div>
+		</div>
+		
+		<div class="control-group">
+			<label class="control-label" for="country">Country</label>
+		
+			<div class="controls">
+				<select id="country">
+				{% for country in countries %}
+					<option value="{{ country.code }}">{{ country.name }}</option>
+				{% endfor %}
+				</select>
+			</div>
+		</div>
+	</fieldset> -->
+
+	<fieldset>
+		<legend>How can we contact you?</legend>
+		
+		<div class="control-group">
+			<label class="control-label" for="email">Email Address</label>
+			<div class="controls">
+				<div class="input-prepend">
+					<span class="add-on"><i class="icon-envelope"></i></span>
+					<input class="span12" type="text" id="email" placeholder="(required)" type="email"{% if not email is empty %} value="{{ email }}"{% endif %}>
+				</div>
+			</div>
+		</div>
+		
+		<div class="control-group">
+			<label class="control-label" for="phone">Phone Number</label>
+			<div class="controls">
+				<div class="input-prepend">
+					<span class="add-on"><i class="icon-bell"></i></span>
+					<input class="span12" type="text" id="phone" placeholder="(optional)"{% if not phone is empty %} value="{{ phone }}"{% endif %}>
+				</div>
+			</div>
+		</div>
+	</fieldset>	
+
+	<fieldset>
+		<legend>How can we help?</legend>
+
+		<div class="control-group">
+			<label class="control-label" for="phone">Type of Enquiry</label>
+			
+			<div class="controls">
+				<select id="category">
+				{% if class == 'student' %}
+					<option value="support">Customer Support</option>
+					<option value="billing">Billing Support</option>
+				{% else %}
+					<option value="support">Teacher Support</option>
+				{% endif %}
+					<option value="feedback">Feedback and Suggestions</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label class="control-label" for="question">Comment</label>
+			
+			<div class="controls">
+				<textarea rows="5" id="question" class="span9" placeholder="Type in your question or comment …"></textarea>
+			</div>
+		</div>
+
+		<div class="control-group">
+			<div class="controls">
+				<input class="btn btn-primary btn-large" name="commit" type="submit" value="Send request">
+				&emsp;<i class="icon-info-sign"></i> We hate spam as much as you do. View our <a href="/privacy">Privacy Policy</a>.
+			</div>
+		</div>
+	</fieldset>
+</form>
+
+{% endblock %}
+
+{% block javascript %}
+    {{ parent() }}
+	
+	<script>
+		$(document).ready(function() {
+			$('#country').val('GB');
+		})
+	</script>
+
+{% endblock %}

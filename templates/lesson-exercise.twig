@@ -1,0 +1,25 @@
+{% extends pjax == true ? "fragment.twig" : "learning_base.twig" %}
+
+{% block template %}exercise{% endblock %}
+
+{% import "macro/panels.twig" as panel %}
+
+{% block title %}Level {{ level }} &gt; Lesson {{ lesson }} &gt; Exercise{% endblock %}
+
+{% block learningcontent %}
+    {{ parent() }}
+    <div class="span12">
+        <div id="exercise" data-url="{{ movie }}"></div>
+    </div>
+{% endblock %}
+{% block notecontent %}
+    {{ parent() }}    
+    <div id="" class="span12">
+        <div class="">
+            <header style="margin-bottom:1em"><i class="icon-pencil icon-white"></i>&nbsp;My Notes</header>
+            <form>
+                <textarea id="note" style="resize:vertical" class="input-block-level" rows="5"></textarea>
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% import "panels.html" as panel %}
+
+{% block title %}Level {{ level }} &gt; Lesson {{ lesson }} &gt; Exam{% endblock %}
+
+{% block maincontent %}
+	{% include 'lesson_tabs.html' %}
+
+
+	<div class="row-fluid">
+		<div class="span9">
+			<div id="alert" class="alert" style="display:none"></div>
+			
+			<!-- Original dimensions = 720x540 -->
+			<object type="application/x-shockwave-flash" id="quiz" name="quiz" data-nonce="{{ nonce }}" data-level="{{ level }}" data-lesson="{{ lesson }}" data="{{ movie }}">
+				<param name="movie"             value="{{ movie }}">
+				<param name="AllowScriptAccess" value="always">
+				<param name="scale"             value="default">
+				<param name="quality"           value="best">
+				<param name="bgcolor"           value="#ffffff">
+				<param name="flashvars"         value="vHtmlContainer=true&vIE=<!--[if IE]>true<![endif]--><!--[if !IE]>false<![endif]-->&vUseFSCommand=true&vLMSPresent=false&vAOSupport=false">
+				<param name="wmode"             value="direct">
+			</object>
+		</div>
+
+		<div id="sidebar" class="span3">
+			{{ panel.notes }}
+		</div>
+	</div>
+{% endblock %}
+
+{% block javascript %}
+	{{ parent() }}
+	
+	<script src="/js/jquery.ba-dotimeout.min.js"></script>
+
+	<script>
+		var movie = $('#quiz');
+
+		function resizePlayer() {
+			// Resize the player according to available width
+			movie.css('width', movie.parent('div').width());
+
+			// Set height based on 4/3 aspect ratio
+			movie.css('height', Math.round(movie.width() * 3 / 4).toString() + 'px');
+
+			// Ensure that the Flash object is visible again
+			movie.css('visibility', 'visible');
+		}
+
+		$(document).ready(function() {
+			// Activate the correct tab and disable its click action
+			$('li.exam').attr('class', 'active').click(false);
+
+			// Resize the player now that the document is ready
+			resizePlayer();
+
+			$(window).resize(function() {
+				// Render the Flash object invisible (otherwise it will lock up and crash)
+				movie.css('visibility', 'hidden');
+
+				// Debounce resize events within a 250ms timeframe before doing anything
+				$.doTimeout('resize', 250, function() {
+					resizePlayer();
+				});
+			});
+		});
+	</script>
+
+	<!--[if IE]>
+	<script type="text/vbscript">
+		Sub quiz_FSCommand(ByVal sCommand, ByVal vArg)
+			call quiz_DoFsCommand(sCommand, vArg)
+		End Sub
+	</script>
+	<![endif]-->
+
+	<script src="/js/application/quiz.js"></script>
+
+{% endblock %}

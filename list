@@ -1,0 +1,6 @@
+templates/cache
+logs
+public/amember4/data
+public/amember4/data/cache
+public/amember4/data/upload
+public/amember4/data/new-rewrite

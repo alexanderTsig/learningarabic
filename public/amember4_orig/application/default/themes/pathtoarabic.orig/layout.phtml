@@ -1,0 +1,20 @@
+<?php
+
+ob_start();
+include $this->_script('_top.phtml');
+$top = ob_get_contents();
+ob_end_clean();
+
+// Import Twig so as to avoid re-inventing the wheel (and because aMember's page templating system is awful)
+require_once '/var/www/portal.pathtoarabic.com/vendor/autoload.php';
+
+$loader = new Twig_Loader_Filesystem('/var/www/portal.pathtoarabic.com/templates');
+$twig = new Twig_Environment($loader, array(
+	'cache'       => false
+));
+
+echo $twig->render('membership.twig', array(
+	amember_top     => $top,
+	amember_content => $content,
+	get_msg         => $_GET['_msg']
+));

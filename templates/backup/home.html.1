@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block maincontent %}
+	<p>Hi {{ name }}. Your start level is {{ startlevel }}. You current level is {{ user_level }}. Your highest available lesson is {{ maxlesson }}</p>
+
+	<div class="row-fluid">
+		<div class="span10">
+			<h3>Weekly Attendance</h3>
+		</div>
+	</div>
+
+	<div class="row-fluid">
+		<div class="span5">
+			<div class="progress progress-striped">
+				<div class="bar" style="width:100%;"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row-fluid">
+		<div class="span10">
+			<h3>Overall Progress</h3>
+		</div>
+	</div>
+
+	<div class="row-fluid">
+		<div class="span5">
+			<div class="progress progress-striped progress-success">
+				<div class="bar" style="width:{{ progress }}%;"></div>
+			</div>
+		</div>
+		
+		<!-- <div class="span7">
+			<span class="label">Level {{ user_level }}</span>
+		</div> -->
+	</div>
+
+	<div id="levels">
+		<h2 rel="tooltip" title="test">Start by selecting the appropriate level</h2>
+
+		<div class="row-fluid">
+			{% for item in levels %}
+				{% if item.id > user_level %}{% set access_class = 'locked' %}{% else %}{% set access_class = 'unlocked' %}{% endif %}
+				<div class="span3 well {{ access_class }}" data-title="Level {{ item.id }} - {{ item.title }}" data-content="{{ item.description }}" rel="popover">
+					Level {{ item.id }}
+					<div class="progress"><div class="bar" style="width:{{ item.progress }}%"></div></div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}
+
+{% block javascript %}
+	{{ parent() }}
+	<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-tooltip.js"></script>
+	<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-popover.js"></script>
+	<script src="/js/application/home.js"></script>
+{% endblock %}

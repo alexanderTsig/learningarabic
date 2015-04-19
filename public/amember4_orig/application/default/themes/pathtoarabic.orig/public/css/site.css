@@ -1,0 +1,41 @@
+/**
+ * You can place your custom CSS statements here
+ * it is better to write everything custom here
+ * because this file won't be replaced during upgrade
+ * Don't forget to rename this file to "site.css"
+ */
+
+h1 {
+	display:none;
+}
+
+h2 {
+	/* margin-bottom:0.56em; */
+	font-family: "Segoe UI Light","Helvetica Neue","Segoe UI","Segoe WP",sans-serif;
+    font-weight: lighter;
+}
+
+/* aMember doesn't properly hide the payment option where there is only one choice */
+#row-paysys_id {
+	display:none;
+}
+
+form span.error {
+	display:none;
+}
+
+.form-horizontal .control-group {
+	margin-bottom: 0.8em;
+}
+
+.am-form label[class=radio] {
+	margin-bottom:10px;
+}
+
+.am-form span.required {
+	display:none;
+}
+
+.am-form .comment {
+	display:none;
+}

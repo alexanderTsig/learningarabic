@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+
+{% block title %}Level {{ level }}{% endblock %}
+
+{% block maincontent %}
+
+	<!-- <div class="page-header">
+		<h1>Level {{ level }}</h1>
+	</div> -->
+
+	<form class="well form-inline" style="-moz-user-select:none">
+		<label class="checkbox">
+			<input id="no-old-lessons" type="checkbox">&ensp;Hide previously completed lessons
+		</label>
+
+		&emsp;
+
+		<label class="checkbox">
+			<input id="arabic-titles" type="checkbox">&ensp;Show lesson titles in Arabic
+		</label>
+	</form>
+
+	<table class="table lessons">
+		<thead>
+			<tr>
+				<th>Lesson</th>
+				<th>Best Score</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			{% for item in lessons %}
+				<tr class="{% if item.lesson > max_lesson %}locked{% elseif item.test_status == 'passed' %} passed{% endif%}">
+					<td>
+						<span class="badge">{{ item.lesson }}</span>&emsp;
+						<a href="{% if item.lesson <= max_lesson + 1 %}/level/{{level }}/{{ item.lesson }}/video{% else %}#{% endif %}">{{ item.title_en }}<span class="gap"></span><span dir="rtl">{{ item.title_ar }}</span></a>
+					</td>
+
+					<td>
+					 	<div class="status">
+							{% if item.test_status == 'passed' %}<span class="label label-success">Passed</span>{% endif %}
+							{% if item.test_status == 'failed' %}<span class="label label-warning">Failed</span>{% endif %}
+							{% if item.test_status == 'skipped' and (item.level < user_level or (item.level == user_level and item.lesson < max_lesson)) %}<span class="label">Skipped</span>{% endif %}
+						</div>
+
+						{% if item.test_status != 'skipped' %}
+						<span class="score">{{ item.score }}%</span>
+
+						<div class="progress {% if item.test_status == 'passed' %}progress-success{% else %}progress-danger{% endif %}">
+							<div class="bar" style="width:{{ item.score }}%"></div>
+						</div>
+						{% endif %}
+					</td>
+				</tr>
+			{% endfor %}
+			</tr>
+		</tbody>
+	</table>
+
+{% endblock %}
+
+{% block javascript %}
+	{{ parent() }}
+
+	<script>
+		function hidePreviousLessons(enable) {
+			if (enable) {
+				$('tbody > tr.passed').hide();
+				// $('tbody > tr:nth-child(1n+{{ max_lesson }})').show();
+			}
+			else {
+				$('tbody > tr').show();
+			}
+		}
+
+		function showArabicTitles(enable) {
+			if (enable) {
+				$('span.gap').html('&ensp;');
+				$('span[dir=rtl]').show();
+			}
+			else {
+				$('span[dir=rtl]').hide();
+				$('span.gap').empty();
+			}
+		}
+
+		$(document).ready(function() {
+			// Allow navigation to lessons by clicking the cell containing the hyperlink
+			$('tbody > tr[class!=locked] > td:first-child').each(function() {
+				$(this).click(function() {
+					window.location = $(this).children('a').attr('href');
+				}).css('cursor', 'pointer');
+			});
+
+			// Disable hyperlinks to lessons which are not available to the user yet
+			$('tbody > tr[class=locked] > td:first-child > a').click(function() {
+				return false;
+			}).css('cursor', 'default');
+
+			// Toggle control for previously completed lessons
+			$('#no-old-lessons').click(function() {
+				hidePreviousLessons($(this).prop('checked'));
+				$.getJSON("/api/setpref/no_old_lessons/" + $(this).prop('checked'));
+			});
+
+			// Toggle control for Arabic lesson titles
+			$('#arabic-titles').click(function() {
+				showArabicTitles($(this).prop('checked'));
+				$.getJSON("/api/setpref/arabic_titles/" + $(this).prop('checked'));
+
+			});
+
+			$.getJSON("/api/getpref/no_old_lessons", function(pref) {
+				$('#no-old-lessons').prop('checked', pref.no_old_lessons);
+				hidePreviousLessons(pref.no_old_lessons);
+			});
+
+			$.getJSON("/api/getpref/arabic_titles", function(pref) {
+				$('#arabic-titles').prop('checked', pref.arabic_titles);
+				showArabicTitles(pref.arabic_titles);
+			});
+
+
+		});
+	</script>
+
+{% endblock %}

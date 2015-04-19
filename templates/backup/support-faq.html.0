@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}Support : FAQ{% endblock %}
+
+{% block maincontent %}
+
+<div class="navbar">
+    <div class="navbar-inner">
+        <a class="brand" href="/support">Help &amp; Support</a>
+
+        <ul class="nav">
+            <li class="active"><a href="/support/faq">FAQ</a></li>
+            <li><a href="/support/tutorials">Video Tutorials</a></li>
+            <li><a href="/support/contact">Contact Support</a></li>
+            <li><a href="/support/feedback">Send Feedback</a></li>
+        </ul>
+    </div>
+</div>
+
+<div style="line-height:30px;float:right">
+	Select a category:&ensp;
+	<select id="category-nav" style="vertical-align:baseline">
+		{% for cat_title, cat in faq %}
+		<option data-anchor="{{ cat.anchor }}">{{ cat_title }}</option>
+		{% endfor %}
+	</select>
+</div>
+
+{% for cat_title, cat in faq %}
+	<h3 id="{{ cat.anchor }}">{{ cat_title }}</h3>
+	{% for q, a in cat %}
+		{% if q != 'anchor' %}
+		<div class="faq">
+			<span>{{ q }}</span>
+			<p>{{ a }}</p>
+		</div>
+		{% endif %}
+	{% endfor %}
+
+	<div align="right"><a href="#"><i class="icon-arrow-up"></i> Start of page</a></div> 
+{% endfor %}
+
+{% endblock %}
+
+{% block javascript %}
+    {{ parent() }}
+
+	<script>
+		$(document).ready(function() {
+			$('#category-nav').change(function() {
+				location.href = '#' + $(this).find(':selected').data('anchor');
+			});
+		});
+	</script>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome!{% endblock %}
+
+{% block maincontent %}
+
+<h2>Which teachers would you prefer?</h2>
+
+<p>Select the teacher you wish to learn from in accordance to gender. Our teachers all use the same overall teaching methods but each has a unique personal approach. Don't worry - you can change this setting at any time later.</p>
+
+<h2>How good is your Arabic?</h2>
+
+<p>How would you rate your competency in Arabic right now? Higher ratings will allow you to skip the exams for the easier course material, immediately unlocking access to the more advanced content.</p>
+
+<div class="row-fluid">
+	<div class="span3">
+		<div style="margin-right:auto" class="tile tile-blue">
+			<img src="/img/question_bubble.png">
+			<span>introductory</span>
+		</div>
+		<p style="padding:9px">For people just starting out with the language.</p>
+	</div>
+	<div class="span3">
+		<div style="margin-right:auto" class="tile tile-blue">
+			<img src="/img/question_bubble.png">
+			<span>beginner</span>
+		</div>
+		<p style="padding:9px">For people who are familiar only with the alphabet but unable to converse in Arabic.</p>
+	</div>
+	<div class="span3">
+		<div style="margin-right:auto" class="tile tile-blue">
+			<img src="/img/question_bubble.png">
+			<span>intermediate</span>
+		</div>
+		<p style="padding:9px">For people with ... ?</p>
+	</div>
+	<div class="span3">
+		<div style="margin-right:auto" class="tile tile-blue">
+			<img src="/img/question_bubble.png">
+			<span>advanced</span>
+		</div>
+		<p style="padding:9px">Lessons at this level will presented entirely in Arabic!</p>
+	</div>
+</div>
+
+<h2 style="clear:both">How did you find out about us?</h2>
+
+{% endblock %}
+
+{% block javascript %}
+	{{ parent() }}
+{% endblock %}
