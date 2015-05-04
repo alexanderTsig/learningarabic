@@ -1,0 +1,655 @@
+ERROR - 2015-04-21T06:24:38+00:00 - exception 'ErrorException' with message 'PDOStatement::execute(): MySQL server has gone away' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\class\PTA\App.php:61
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'PDOStatement::e...', 'D:\Mywork\ahmed...', 61, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\class\PTA\App.php(61): PDOStatement->execute()
+#2 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\class\PTA\User.php(387): PTA\App::getLevelIdentifiers()
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\class\PTA\User.php(780): PTA\User->getLevel()
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\class\PTA\User.php(57): PTA\User->getMaxLesson()
+#5 [internal function]: PTA\User->jsonSerialize()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(62): json_encode(Object(PTA\User))
+#7 [internal function]: {closure}()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#10 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#11 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#12 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#13 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#14 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#15 {main}
+
+Next exception 'Exception' with message 'Failed calling PTA\User::jsonSerialize()' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:62
+Stack trace:
+#0 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(0): json_encode()
+#1 [internal function]: {closure}()
+#2 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#9 {main}
+ERROR - 2015-04-21T07:11:20+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('540')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T07:11:20+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('434')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T07:11:20+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('297')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T07:11:20+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('203')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T07:13:48+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('434')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T07:13:48+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('203')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T07:13:48+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('297')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T07:13:48+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('540')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T07:13:54+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('540')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T07:13:55+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('434')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T07:13:55+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('203')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T07:13:55+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('297')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T09:13:16+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('540')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T09:13:16+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('203')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T09:13:16+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('434')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T09:13:16+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('297')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T09:13:25+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('540')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T09:13:26+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('203')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T09:13:26+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('434')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T09:13:26+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('297')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T09:40:33+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('540')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T09:40:33+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('434')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T09:40:33+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('297')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T09:40:33+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('203')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T09:40:38+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('540')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T09:40:39+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('434')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T09:40:39+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('203')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T09:40:39+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('297')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T09:43:09+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('434')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T09:43:09+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('540')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T09:43:09+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('203')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T09:43:09+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('297')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T09:43:16+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('540')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T09:43:17+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('297')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T09:43:17+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('434')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T09:43:17+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('203')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T09:49:19+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('434')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T09:49:19+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('203')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T09:49:19+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('297')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T09:49:19+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('540')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T09:49:33+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('540')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T09:49:34+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('203')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T09:49:34+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('434')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T09:49:34+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('297')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T09:50:18+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('540')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T09:50:18+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('434')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T09:50:18+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('297')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-04-21T09:50:18+00:00 - exception 'ErrorException' with message 'file_get_contents(/var/cache/avatar/default.jpg): failed to open stream: No such file or directory' in D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php:41
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'file_get_conten...', 'D:\Mywork\ahmed...', 41, Array)
+#1 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\lib\routes-api.inc.php(41): file_get_contents('/var/cache/avat...')
+#2 [internal function]: {closure}('203')
+#3 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Router.php(172): call_user_func_array(Object(Closure), Array)
+#4 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1222): Slim\Router->dispatch(Object(Slim\Route))
+#5 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\Flash.php(86): Slim\Slim->call()
+#6 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\MethodOverride.php(94): Slim\Middleware\Flash->call()
+#7 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 D:\Mywork\ahmed\source\portal.pathtoarabic.com\vendor\slim\slim\Slim\Slim.php(1174): Slim\Middleware\PrettyExceptions->call()
+#9 D:\Mywork\ahmed\source\portal.pathtoarabic.com\public\index.php(95): Slim\Slim->run()
+#10 {main}

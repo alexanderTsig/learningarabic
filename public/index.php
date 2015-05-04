@@ -1,5 +1,4 @@
 <?php
-
 # This application uses the Slim micro-framework and the Twig template engine.
 # Composer was used to construct the initial application skeleton, as
 # described here:
@@ -8,6 +7,18 @@
 
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type");
+// Access-Control headers are received during OPTIONS requests
+if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+    if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_METHOD']))
+        header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+    if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']))
+        header("Access-Control-Allow-Headers:        {$_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']}");
+    exit(0);
+}
+
 
 
 require_once '../vendor/autoload.php';
@@ -46,7 +57,7 @@ $app->hook('slim.before', function() use ($app, $user) {
     $request_path = $app->request()->getPathInfo();
 
     # Do not allow for exam result submissions to be thwarted by an expired aMember session
-    if ($app->request()->isPost() && preg_match('/^\/level\/\d+\/\d+\/exam$/', $request_path) != 0)
+    if ($app->request()->isPost() && (preg_match('/^\/level\/\d+\/\d+\/exam$/', $request_path) != 0||preg_match('/^\/level\/\d+\/\d+\/result/', $request_path) != 0))
         return;
 
     if ($user->isLoggedIn() && !$user->isMembershipValid()) {

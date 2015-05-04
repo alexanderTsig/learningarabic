@@ -47,12 +47,13 @@
         }
         $("#player").flowplayer({
             // one video: a one-member playlist
+            key:"$486645316100173",            
             swf: "/js/flowplayer/flowplayer.swf",
             playlist: playList,
             ratio: 9/16,
             cuepoints:cuepoints,
             splash: true 
-        });
+        }).addClass("play-button");
         $("#player").bind("progress",function(event,folwer,time){
             var player = flowplayer($("#player"));
             var current_clip = player.video.index;
@@ -65,7 +66,10 @@
                 player.seek(seek);
                 seek = 0;
             }
-        })
+        })         
+        $("#player").bind("contextmenu",function(){
+            return false;
+        });         
         return true;
     }
 

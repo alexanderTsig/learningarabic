@@ -8,22 +8,16 @@
 
 {% block maincontent %}
 	{{ parent() }}
-
 	{{ tip.showall(tips) }}
-
 	<form class="well form-inline" style="-moz-user-select:none">
 		<label class="checkbox">
 			<input id="show-old-lessons" type="checkbox">&ensp;Show previously completed lessons
 		</label>
-
 		&emsp;
-
 		<label class="checkbox">
 			<input id="arabic-titles" type="checkbox">&ensp;Show lesson titles in Arabic
-		</label>
-	
+		</label>	
 		&emsp;
-
 		<label class="checkbox">
 			<input id="starred" type="checkbox">&ensp;Show only starred lessons
 		</label>
@@ -76,8 +70,8 @@
 				{% endif %}
 				</span>
 				<a class="btn btn-primary" href="/level/{{level }}/{{ item.lesson }}/video">Watch Video</a>
-				<a class="btn btn" href="/level/{{level }}/{{ item.lesson }}/exercise">View Exercises</a>
-				<a class="btn btn" href="/level/{{level }}/{{ item.lesson }}/exam"></i>Take Test</a>
+				<a class="btn btn" href="/level/{{level }}/{{ item.lesson }}/exercise">View Engage</a>
+				<a class="btn btn" href="/level/{{level }}/{{ item.lesson }}/exam"></i>View Unlock</a>
 			</div>
 		</div>
 	</div>

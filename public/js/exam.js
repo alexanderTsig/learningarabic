@@ -12,6 +12,9 @@ function player_DoJSCommand(command, args) {
 
 	pta.dispatchTable['exam'] = function(pjax) {
 		$('#alert').css('padding-right', '14px');
+                $('li.exam').attr('class', 'active').click(false);
+                return true;
+                
 		resetTest();
 
 		$.getJSON('/api/level/' + pta.level + '/' + pta.lesson + '/questions/reviewable', function(questions) {
@@ -44,7 +47,6 @@ function player_DoJSCommand(command, args) {
 			"name":        "quiz",
 			"data-nonce":  player.data('nonce')
 		}
-
 		swfobject.embedSWF(player.data('url'), "quiz", "720", "450", "10.1.0", "playerProductInstall.swf", {}, swf_params, swf_attrs, onMovieLoad);
 	}
 

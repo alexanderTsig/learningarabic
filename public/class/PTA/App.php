@@ -7,8 +7,8 @@ use \Michelf\Markdown;
 
 class App {
 
-    protected static $exam_path = '//ptaexam.s3.amazonaws.com/';
-    protected static $exercise_path = '//ptaexercise.s3.amazonaws.com/';
+    protected static $exam_path = 'http://ptaexam.s3.amazonaws.com/';
+    protected static $exercise_path = "http://ptaexercise.s3.amazonaws.com/";    
 
     const MAX_CLIPS = 2; // Allow up to two video clips per lesson/level tuple
 
@@ -348,34 +348,28 @@ SQL;
 
         return round($hours * 3600 + $minutes * 60 + $seconds + ($frames * 0.04));
     }
+    
+    public static function getHostAddr(){
+        return "http" . (($_SERVER['SERVER_PORT'] == 443) ? "s://" : "://") . $_SERVER['HTTP_HOST'];        
+    }
 
     public static function getExerciseURL($level, $lesson) {
         if (!Validate::lesson($level, $lesson, __METHOD__))
             return null;
-
-        $url = self::$exercise_path . "${level}/${lesson}/index.html";
-
-        # FIXME: should check if response is XML containing error from Amazon
-
+        $host = self::getHostAddr();
+        $tincanBackend  = $host. "/${level}/${lesson}/result-exercise";
+        $url = self::$exercise_path . "v2/${level}/${lesson}/story.html?endpoint=".$tincanBackend;
         return $url;
-
-        #else {
-        #	Log::error("Unable to open exam asset: $swf");
-        #}
     }
 
-    public static function getExamURL($level, $lesson) {
+    public static function getExamURL($level, $lesson, $userId, $authkey) {
         if (!Validate::lesson($level, $lesson, __METHOD__))
             return null;
-
-        return self::$exam_path . "${level}/${lesson}/quiz.swf";
-
-        /* if (is_readable($swf)) {
-          return "//${level}/${lesson}/quiz.swf";
-          }
-          else {
-          Log::error("Unable to open exam asset: $swf");
-          } */
+        $host = self::getHostAddr();
+        $tincanBackend  = $host. "/level/${level}/${lesson}/result-exam/";
+        $actor = $userId;
+        $url = self::$exam_path . "v2/${level}/${lesson}/quiz.html?endpoint=".$tincanBackend."&user=".$actor."&auth=".$authkey."&registration=760e3480-ba55-4991-94b0-01820dbd23a2";
+        return $url;
     }
 
     public static function getLoginURL() {

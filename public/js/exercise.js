@@ -4,7 +4,8 @@
 		// Activate the correct tab and disable its click action
 		$('li.exercise').attr('class', 'active').click(false);
 
-		// Load the flash movie (hopefully switch to HTML5 native later)
+		return true;
+                // Load the flash movie (hopefully switch to HTML5 native later)
 		loadFlashMovie();
 
 		// Resize the player now that the document is ready

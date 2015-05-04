@@ -29,6 +29,8 @@ body.learning-page{
 }
 .learning-page .navbar-inner{
     padding: 12px 10px;
+    background-color: #FFF;
+    background-image: none;
 }
 .learning-page .navbar .nav{
     float: right;    
@@ -158,12 +160,14 @@ li.next>a.pagecontroll .radious{
     -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
     -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
-    background-color: #fafafa;
-    background-image: -moz-linear-gradient(top, #ffffff, #f2f2f2);
+    background-color: #FFF;
+    background-image: none;
+    /*background-color: #fafafa;*/
+/*    background-image: -moz-linear-gradient(top, #ffffff, #f2f2f2);
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f2f2f2)); 
     background-image: -webkit-linear-gradient(top, #ffffff, #f2f2f2); 
     background-image: -o-linear-gradient(top, #ffffff, #f2f2f2);
-    background-image: linear-gradient(to bottom, #ffffff, #f2f2f2); 
+    background-image: linear-gradient(to bottom, #ffffff, #f2f2f2); */
 }
 .learning-page #footer{
     padding: 1.5em 2.2em;
@@ -176,12 +180,14 @@ li.next>a.pagecontroll .radious{
     -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
     -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
-    background-color: #fafafa;
+    background-color: #FFF;
+    background-image: none;
+/*    background-color: #fafafa;
     background-image: -moz-linear-gradient(top, #ffffff, #f2f2f2);
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f2f2f2)); 
     background-image: -webkit-linear-gradient(top, #ffffff, #f2f2f2); 
     background-image: -o-linear-gradient(top, #ffffff, #f2f2f2);
-    background-image: linear-gradient(to bottom, #ffffff, #f2f2f2); 
+    background-image: linear-gradient(to bottom, #ffffff, #f2f2f2); */
 }
 .learning-page #footer #teachers{
     text-align: left;
@@ -210,11 +216,55 @@ li.next>a.pagecontroll .radious{
  */
 div#player{
     background-color: #e7e7e7;
-    border: 1px solid #ccc;
+    /*border: 1px solid #ccc;*/
+    border: none;
 }
 div#player.is-splash{
     background-image: url(/img/videosplash_1.png);
     background-repeat: no-repeat;
     background-position: 100% 100%;
     background-size: cover;
+}
+
+div.stageplayer{
+    position: relative;
+/*    max-width:100vh;
+    max-height:100%;*/
+    margin:0 auto;
+    overflow: hidden; 
+}
+div.stageplayer:before {
+    content:"";
+    display: block;
+    margin-top: 75%;
+}
+div.stageplayer-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+div.stageplayer.stage-video-player:before {
+    content:"";
+    display: block;
+    margin-top: 56.25%;
+}
+div.stageplayer.stage-video-player{
+    margin-bottom: 15px;
+}
+div.stageplayer-content #player{
+    width: 100%;
+    height: 100%;
+}
+
+.fp-context-menu{
+    visibility: hidden;
+}
+.fp-embed{
+    display:none !important;
+}
+#player>a{
+    visibility: hidden;
 }

@@ -468,6 +468,7 @@ SQL;
 	# Determine whether the user has a valid (non-expired) membership
 	#
 	public function isMembershipValid() {
+            return true;
 		// return \Am_Lite::getInstance()->haveSubscriptions(\Am_Lite::ANY);
 		return \AM_Lite::getInstance()->isUserActive();
 	}
@@ -1037,7 +1038,9 @@ SQL;
 	#
 	public function createNonce($ip, $class = 'undefined', $user_id = null) {
 		$uuid = App::createUUID();
-
+                if(!$uuid){
+                    $uuid = md5(uniqid(mt_rand(), true)); 
+                }
 		if ($user_id === null)
 			$user_id = $this->getUserId();
 
@@ -1054,7 +1057,6 @@ SQL;
 			':class'   => $class,
 			':value'   => $uuid
 		]);
-
 		return ($rc === true) ? $uuid : null;
 	}
 
@@ -1062,9 +1064,6 @@ SQL;
 	# Note that nonces more than one hour old will not be considered valid.
 	#
 	public function verifyNonce($value, $ip, $class = 'undefined', $user_id = null) {
-		if ($value !== null && preg_match('/^[[:alnum:]]{40}$/', $value) === 0)
-			return false;
-
 		if ($user_id === null)
 			$user_id = $this->getUserId();
 
@@ -1079,8 +1078,7 @@ SQL;
 		$stmt->bindValue(':class', $class, PDO::PARAM_STR);
 		$stmt->bindValue(':value', $value, PDO::PARAM_STR);
 
-		$stmt->execute();
-
+		$stmt->execute();                
 		return $stmt->fetchColumn(0) == 1 ? true : false;
 	}
 

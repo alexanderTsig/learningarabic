@@ -423,7 +423,8 @@ class Memcached
      */
     protected function readSocket()
     {
-        if (is_null($this->socket)) {
+        return null;
+		if (is_null($this->socket)) {
             return null;
         }
 
