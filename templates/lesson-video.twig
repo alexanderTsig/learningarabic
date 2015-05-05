@@ -49,42 +49,7 @@
                         <i class="icon-chevron-right"></i>
                     </span>
                 </a>
-            </li>
-            {#<div class="span12 footer-nav text-center">
-               {# <a class="navbutton prior leftbutton {% if prev_lesson == "" %}disabled{% endif %}" href="{{prev_lesson}}">                            
-                    <span class="radious">
-                        <i class="icon-chevron-left"></i>
-                    </span>
-                    Prior Lesson
-                </a>#}
-            {#   <span class="chapter">
-                   {% if chapters|length > 0 %}
-                       {% for item in chapters %}
-                           <a href="#">{{ item.title }}</a> 
-                           {% if loop.last ==  false %}
-                               &nbsp;>&nbsp;
-                           {% endif %}    
-                       {% endfor %}
-                   {% endif %}
-               </span>
-               <a class="navbutton next rightbutton {% if next_lesson == "" %}disabled{% endif %}" href="{{next_lesson}}">
-                   Next Lesson
-                   <span class="radious">
-                       <i class="icon-chevron-right"></i>
-                   </span>
-               </a>
-           </div>#}
-            {#{% if not prev_lesson is empty %}
-                <li class="previous">
-                    <a href="{{ prev_lesson }}">&larr; Prior Lesson</a>
-                </li>
-            {% endif %}
-
-            {% if not next_lesson is empty %}
-                <li class="next">
-                    <a href="{{ next_lesson }}">Next Lesson &rarr;</a>
-                </li>
-            {% endif %}#}
+            </li>           
         </ul>
     </div>
 {% endblock %}

@@ -515,8 +515,9 @@ SQL;
 	public function getMembershipType() {
 		$products = \AM_Lite::getInstance()->getProducts();
 		$best_product = null;
-		$weight = 0;
-
+		$weight = 0;                
+                $b = \AM_Lite::getInstance()->getCategories();               
+                
 		foreach (\AM_Lite::getInstance()->getAccess() as $access) {
 			$expiry_date = DateTime::createFromFormat('Y-m-d H:i:s', $access['expire_date'] . ' 00:00:00', new DateTimeZone('UTC'));
 
@@ -535,6 +536,26 @@ SQL;
 
 		return $best_product;
 	}
+        
+        public function getProductCategory(){
+//            $categories =\PTA\Amlite::getInstance()->select("SELECT * FROM ?_product_category ORDER BY parent_id, 0+sort_order");
+            $productIds = array();
+            foreach (\AM_Lite::getInstance()->getAccess() as $access) {
+                $productIds[] = $access['product_id'];
+            }            
+            $categories = array();
+            if(count($productIds) > 0){
+                $sql = "SELECT * FROM `am_product_category` WHERE `product_category_id` in (SELECT `product_category_id` FROM `am_product_product_category` WHERE `product_id` IN (".implode(',', $productIds)."))";
+                $categories =\PTA\Amlite::getInstance()->select($sql);
+            }
+            $categoryCodes = array();
+            if(count($categories) > 0){
+                foreach($categories as $row){
+                    $categoryCodes[] = $row['code'];
+                }
+            }
+            return $categoryCodes;
+        }
 
 	# If the user's membership is chronologically scoped then return the expiry date as a DateTime object.
 	#

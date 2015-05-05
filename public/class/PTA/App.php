@@ -40,6 +40,12 @@ class App {
         '65bc5042a81f6c77c4b52f73ffa145f82f1c5f7f',
         'bd038e566a8f03180267f3228ca23dfe52e1f8c0'
     ];
+    
+    
+    public static $Cat_Academy_Code = "tiRuO84qkl";
+    public static $Cat_Engage_Code = "KZzSFTAjc4";
+    public static $Cat_Download_Code = "sc9I3RIUaz";
+    public static $membership_path = "http://pathtoarabic.co.uk/acad-upgrade/";
 
     public static function getQuestionsHavingReview($level, $lesson) {
         if ($lesson !== null && !Validate::lesson($level, $lesson, __METHOD__))

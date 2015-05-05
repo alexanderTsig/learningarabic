@@ -246,9 +246,15 @@ $app->get('/level/:level/:lesson/video(/:gender)', function($level, $lesson, $ge
     if (!$user->isLessonAvailable($level, $lesson))
         $app->redirect('/level/' . $user->getLevel());
     
+//    $catCodes = $user->getProductCategory();    
+//    if(in_array(\PTA\App::$Cat_Academy_Code, $catCodes) == false){
+//        if(in_array(\PTA\App::$Cat_Engage_Code, $catCodes) == true){
+//            $app->redirect(\PTA\App::$membership_path);
+//        }
+//    }
+    
     $lessonData = \PTA\App::getLesson($level, $lesson);
-    $default_gender = $user->getPreferredGender();
-
+    $default_gender = $user->getPreferredGender();        
     if ($gender === null)
         $gender = $default_gender;
 
@@ -292,11 +298,19 @@ $app->get('/level/:level/:lesson/video(/:gender)', function($level, $lesson, $ge
 
 # Display exercise for given level/lesson tuple
 $app->get('/level/:level/:lesson/exercise', function($level, $lesson) use ($app, $user) {
-//    if (!$user->isLessonAvailable($level, $lesson))
-//        $app->redirect('/level/' . $user->getLevel());
+    if (!$user->isLessonAvailable($level, $lesson))
+        $app->redirect('/level/' . $user->getLevel());
 
     $lessonData = \PTA\App::getLesson($level, $lesson);
+    # Get the preceding and following lessons for back/next style buttons
+    $prev_lesson = $user->getPreviousLesson($level, $lesson);
+    $next_lesson = $user->getNextLesson($level, $lesson);
 
+    if ($prev_lesson !== null)
+        $prev_lesson = '/level/' . $prev_lesson[0] . '/' . $prev_lesson[1] . '/exercise';
+
+    if ($next_lesson !== null)
+        $next_lesson = '/level/' . $next_lesson[0] . '/' . $next_lesson[1] . '/exercise';
     
     $bgImage = $user->getBackgroundImage();
     $app->render('lesson-exercise.twig', [
@@ -306,6 +320,8 @@ $app->get('/level/:level/:lesson/exercise', function($level, $lesson) use ($app,
         'title_en' => $lessonData['title_en'],
         'title_ar' => $lessonData['title_ar'],
         'bgImage' => $bgImage,
+        'prev_lesson' => $prev_lesson,
+        'next_lesson' => $next_lesson,
         'neturl' => \PTA\App::getNetConnectionUrl(),
         'user_id' => $user->getUserId(),
         'url' => \PTA\App::getExerciseURL($level, $lesson),
@@ -333,6 +349,15 @@ $app->get('/level/:level/:lesson/exam', function($level, $lesson) use ($app, $us
     
     $bgImage = $user->getBackgroundImage();
 //    $swf = \PTA\App::getExamURL($level, $lesson);
+    # Get the preceding and following lessons for back/next style buttons
+    $prev_lesson = $user->getPreviousLesson($level, $lesson);
+    $next_lesson = $user->getNextLesson($level, $lesson);
+
+    if ($prev_lesson !== null)
+        $prev_lesson = '/level/' . $prev_lesson[0] . '/' . $prev_lesson[1] . '/exam';
+
+    if ($next_lesson !== null)
+        $next_lesson = '/level/' . $next_lesson[0] . '/' . $next_lesson[1] . '/exam';
     
     $app->render('lesson-exam.twig', [
         'pjax' => array_key_exists('X-PJAX', getallheaders()),
@@ -341,6 +366,8 @@ $app->get('/level/:level/:lesson/exam', function($level, $lesson) use ($app, $us
         'lesson' => $lesson,
         'title_en' => $lessonData['title_en'],
         'title_ar' => $lessonData['title_ar'],
+        'prev_lesson' => $prev_lesson,
+        'next_lesson' => $next_lesson,
         'bgImage' => $bgImage,
         'neturl' => \PTA\App::getNetConnectionUrl(),        
         'url' => \PTA\App::getExamURL($level, $lesson, $user->getUserId(), $user->createNonce($_SERVER['REMOTE_ADDR'], 'exam'))

@@ -9,7 +9,7 @@
 {% block maincontent %}
 	{{ parent() }}
 
-	<h2>Which teachers would you prefer?</h2>
+{#	<h2>Which teachers would you prefer?</h2>
 
 	<p>Select the teacher you wish to learn from in accordance to gender. Our teachers all use the same overall teaching methods but each has a unique personal approach. Don't worry - you can change this setting at any time later.</p>
 
@@ -19,14 +19,14 @@
 			<div class="f"></div>
 		</div>
 	</form>
-
-	<div style="text-align:center">
+#}
+	<div style="text-align:center;display:none">
 		<form style="display:inline-block;margin:0">
 			<label class="radio">
 				<input type="radio" name="gender" value="M">{{ male_teachers }}
 			</label>
 			<label class="radio">
-				<input type="radio" name="gender" value="F">{{ female_teachers }}
+				<input type="radio" name="gender" value="F" checked="checked">{{ female_teachers }}
 			</label>
 		</form>
 	</div>

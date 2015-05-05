@@ -251,7 +251,7 @@ div.stageplayer.stage-video-player:before {
     display: block;
     margin-top: 56.25%;
 }
-div.stageplayer.stage-video-player{
+div.stageplayer{
     margin-bottom: 15px;
 }
 div.stageplayer-content #player{
