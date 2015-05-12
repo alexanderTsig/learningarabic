@@ -1,4 +1,5 @@
 <?php
+
 # This application uses the Slim micro-framework and the Twig template engine.
 # Composer was used to construct the initial application skeleton, as
 # described here:
@@ -57,7 +58,7 @@ $app->hook('slim.before', function() use ($app, $user) {
     $request_path = $app->request()->getPathInfo();
 
     # Do not allow for exam result submissions to be thwarted by an expired aMember session
-    if ($app->request()->isPost() && (preg_match('/^\/level\/\d+\/\d+\/exam$/', $request_path) != 0||preg_match('/^\/level\/\d+\/\d+\/result/', $request_path) != 0))
+    if ($app->request()->isPost() && (preg_match('/^\/level\/\d+\/\d+\/exam$/', $request_path) != 0 || preg_match('/^\/level\/\d+\/\d+\/result/', $request_path) != 0))
         return;
 
     if ($user->isLoggedIn() && !$user->isMembershipValid()) {
@@ -67,6 +68,35 @@ $app->hook('slim.before', function() use ($app, $user) {
         }
     } else if (!$user->isLoggedIn() && $request_path !== '/login') {
         $app->redirect('/login');
+    }
+    
+    /**
+     *  Access Level 
+     */
+    if($user->isLoggedIn()) {
+        $ProductTypes = $user->getProductCategory();
+        //Full Access - Product 1 - Academy or Membership
+        if(in_array(\PTA\App::$Cat_membership_Code ,$ProductTypes) == true || in_array(\PTA\App::$Cat_Academy_Code ,$ProductTypes) == true) {
+            return true;
+        }
+        // Product 2 - Engage
+        if(in_array(\PTA\App::$Cat_Engage_Code ,$ProductTypes) == true) {
+            if(preg_match('/^\/level\/\d+\/\d+\/video/', $request_path) != 0){
+                $app->redirect(\PTA\App::$membership_path);
+                return true;
+            }
+            return true;
+        }
+        
+        // Product 3 - Digital Download        
+        if(in_array(\PTA\App::$Cat_Engage_Code ,$ProductTypes) == true) {
+            if(preg_match('/^\/home/', $request_path) != 0 || preg_match('/^\/support/', $request_path) != 0 || preg_match('/^\/amember/', $request_path) != 0){
+                return true;
+            }else{                
+                $app->redirect('/amember4/member');
+            }
+        }        
+//        $app->redirect('/amember4/signup');
     }
 });
 

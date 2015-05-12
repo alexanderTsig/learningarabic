@@ -84,7 +84,22 @@
             <label class="control-label">Edit Background:</label>
             <div class="controls">                                
                 <img src="" class="backImg" width="200px"/>
-                <a class="btn btn-primary" data-ip-modal="#imageModal" style="vertical-align:bottom;">Edit Image</a>
+
+                <div class="btn-group" style="vertical-align:bottom;">
+                    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                        Select Image
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#myModal" role="button" class="btn" data-toggle="modal">Select Form Server</a>
+                        </li>
+                        <li>
+                            <a tabindex="-1" href="#" data-ip-modal="#imageModal">Upload File</a>
+                        </li>
+                    </ul>
+                </div>
+                {##}
                 <input type="hidden" name="background_image" id="background_image" value=""/>
                 <input type="hidden" name="default_background_image" value="/img/wallpaper/default.jpg"/>
             </div>
@@ -96,6 +111,54 @@
             </div>
         </div>
     </form>
+
+    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Select Background Image</h3>
+        </div>
+        <div class="modal-body">
+            <ul class="thumbnails">
+                <li class="span4">
+                    <a href="#" class="thumbnail">
+                        <img src="/img/wallpaper/desert.jpg" alt="">
+                    </a>
+                </li>
+                <li class="span4">
+                    <a href="#" class="thumbnail">
+                        <img src="/img/wallpaper/havest.jpg" alt="">
+                    </a>
+                </li>
+                <li class="span4">
+                    <a href="#" class="thumbnail">
+                        <img src="/img/wallpaper/theater.jpg" alt="">                        
+                    </a>
+                </li>
+            </ul>
+            <ul class="thumbnails">
+                <li class="span4">
+                    <a href="#" class="thumbnail">
+                        <img src="/img/wallpaper/history.jpg" alt="">
+                    </a>
+                </li>
+                <li class="span4">
+                    <a href="#" class="thumbnail">
+                        <img src="/img/wallpaper/grey.png" alt="">
+                    </a>
+                </li>
+                <li class="span4">
+                    <a href="#" class="thumbnail">
+                        <img src="/img/wallpaper/farmer.png" alt="">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            <button class="btn btn-primary selectImg">OK</button>
+        </div>
+    </div>
+
 
     <div class="ip-modal" id="imageModal" style="display:none;">
         <div class="ip-modal-dialog">
@@ -133,4 +196,4 @@
             </div>
         </div>
     </div>
-{% endblock %}
+    {% endblock %}

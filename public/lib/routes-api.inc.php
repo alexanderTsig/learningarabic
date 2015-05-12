@@ -30,27 +30,43 @@ $app->get('/api/tip/:tip_id/defer', function($tip_id) use ($app, $user) {
     ]);
 });
 
-$app->get('/api/user/avatar/:user_id', function($user_id = null) use ($app, $user) {
-    $avatar = "/var/cache/avatar/$user_id.png";
+$app->get('/api/user/avatar/:user_id', function($user_id = null) use ($app, $user) {   
+    
+    $avatar = \PTA\App::getAvatorImgDirectory(). $user_id . ".png";
+    $default = \PTA\App::getAvatorImgDirectory()."default.png";
 
     if (file_exists($avatar)) {
         $app->contentType('image/png');
         echo file_get_contents($avatar);
     } else {
         $app->contentType("image/jpeg");
-        echo file_get_contents("/var/cache/avatar/default.jpg");
+        echo file_get_contents($default);
     }
 });
 
-$app->post('/api/user/avatar', function() use ($app, $user) {
-    $base64 = explode(',', $app->request()->getBody())[1];
-    $image = base64_decode($base64);
+//$app->post('/api/user/avatar', function() use ($app, $user) {
+//    $base64 = explode(',', $app->request()->getBody())[1];
+//    $image = base64_decode($base64);
+//
+//    $ok = false;
+//
+//    if ($image)
+//        $ok = (file_put_contents("/var/cache/avatar/" . $user->getUserId() . ".png", $image) !== false);
+//
+//    $app->contentType('application/json');
+//    echo json_encode([ 'ok' => $ok]);
+//});
 
-    $ok = false;
-
-    if ($image)
-        $ok = (file_put_contents("/var/cache/avatar/" . $user->getUserId() . ".png", $image) !== false);
-
+$app->post('/api/user/avatarimg', function() use ($app, $user) {
+    $request = $app->request();
+    $filepath = $request->post('path');
+    $ok = false;    
+    if ($filepath){
+       $ok = @copy($_SERVER["DOCUMENT_ROOT"]."/".$filepath, \PTA\App::getAvatorImgDirectory(). $user->getUserId() . ".png");
+//       @unlink($_SERVER["DOCUMENT_ROOT"]."/".$filepath);
+    }
+//        $ok = (file_put_contents("/var/cache/avatar/" . $user->getUserId() . ".png", $image) !== false);
+    
     $app->contentType('application/json');
     echo json_encode([ 'ok' => $ok]);
 });

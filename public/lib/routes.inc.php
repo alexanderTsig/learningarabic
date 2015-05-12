@@ -36,6 +36,7 @@ $app->get('/welcome', function() use ($app, $user) {
 });
 
 $app->get('/survey', function() use ($app, $user) {
+    $productType = $user->getProductType();    
     if ($user->hasCompletedSurvey())
         $app->redirect('/home');
 
@@ -58,7 +59,8 @@ $app->get('/survey', function() use ($app, $user) {
         'pjax' => array_key_exists('X-PJAX', getallheaders()),
         'referral_types' => \PTA\App::getReferralTypes(),
         'male_teachers' => $male_teacher_names,
-        'female_teachers' => $female_teacher_names
+        'female_teachers' => $female_teacher_names,
+        'product_type' => $productType 
     ]);
 });
 

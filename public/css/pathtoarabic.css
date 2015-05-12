@@ -607,7 +607,7 @@ h3 {
 
 #avatar {
     position:relative;
-    pointer-events:none;
+    /*pointer-events:none;*/
     width:100px;
     height:100px;
     border:2px solid transparent;
@@ -615,12 +615,12 @@ h3 {
 
 #avatar:after {
     /* Drag Prevention */
-    content: "";
+/*    content: "";
     position:absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100%;*/
 }
 
 #avatar > img {
@@ -772,4 +772,27 @@ textarea[dir=rtl] {
 #review {
     width: 750px; /* SET THE WIDTH OF THE MODAL */
     margin: 0 0 0 -375px; /* CHANGE MARGINS TO ACCOMODATE THE NEW WIDTH (original = margin: -250px 0 0 -280px;) */
+}
+.am-layout-two-coll {
+    display: inline-block;
+    width: 100%;
+}
+
+
+a.thumbnail.selected{
+    border-color: #0088cc;
+    border-width: 2px;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
+    -moz-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
+    box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
+}
+
+#avatar{
+    position: relative;
+}
+.edit-avatar {
+  position: absolute;
+  padding: 4px 6px !important;
+  top:0px;
+  right:0px;
 }

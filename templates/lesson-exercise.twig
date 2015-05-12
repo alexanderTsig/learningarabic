@@ -8,11 +8,19 @@
 
 {% block learningcontent %}
     {{ parent() }}
+{#    <iframe src="{{ url }}" id="exercise-iframe" style="border:none" width="" height="" onload="console.log(this.body)"></iframe>        #}
     <div class="span12 stageplayer">
         <div class="stageplayer-content">
+            <div class="full-screen">
+                <a href="#" class="full-screen-btn">
+                    <i class="icon-fullscreen"></i>
+                </a>
+            </div>
             <iframe src="{{ url }}" style="border:none" width="100%" height="100%" onload="console.log(this.body)"></iframe>        
         </div>        
     </div>
+{% endblock %}
+{% block notecontent %}
     <ul class="pager text-center"> 
         <li class="previous">
             <a href="{{ prev_lesson }}" class="pagecontroll {% if prev_lesson == "" %}disabled{% endif %}"">
@@ -41,6 +49,4 @@
             </a>
         </li>           
     </ul>
-{% endblock %}
-{% block notecontent %}
 {% endblock %}

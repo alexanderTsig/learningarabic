@@ -42,10 +42,15 @@ class App {
     ];
     
     
+    public static $Cat_membership_Code = "K2u8nrJ6Pc";
     public static $Cat_Academy_Code = "tiRuO84qkl";
     public static $Cat_Engage_Code = "KZzSFTAjc4";
-    public static $Cat_Download_Code = "sc9I3RIUaz";
+    public static $Cat_Download_Code = "bZQvjKdFdE";
     public static $membership_path = "http://pathtoarabic.co.uk/acad-upgrade/";
+    
+    public static function getAvatorImgDirectory(){
+        return $_SERVER["DOCUMENT_ROOT"]."/img/avatar/";
+    }
 
     public static function getQuestionsHavingReview($level, $lesson) {
         if ($lesson !== null && !Validate::lesson($level, $lesson, __METHOD__))

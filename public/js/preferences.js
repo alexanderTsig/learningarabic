@@ -89,7 +89,7 @@
                 // Avatar setup
                 $('#imageModal').imgPicker({
                     url: '/js/imgPicker/server/upload_bg.php',
-                    aspectRatio: 1.3,
+                    aspectRatio: 1.45,
                     deleteComplete: function () {
                         var defaultImage = $("input[name=default_background_image]").val();
                         $("input[name=background_image]").val('');
@@ -119,6 +119,22 @@
                         this.modal('hide');
                     }
                 });
+
+
+                /**
+                 * Select Image From Server
+                 */
+                $('a.thumbnail').click(function () {
+                    $('a.thumbnail').removeClass("selected");
+                    $(this).addClass("selected");
+                })
+
+                $('a.thumbnail').dblclick(function () {
+                    selectFromServer();
+                })
+                $('button.selectImg').click(function () {
+                    selectFromServer();
+                })
             }
         });
 
@@ -154,5 +170,19 @@
 
         // FIXME: bolted on - not behaving like a normal preference:w
         $('input[type="radio"][value="' + pta.user.startLevel + '"][data-lesson="' + pta.user.startLesson + '"]').prop('checked', 'true');
+    }
+
+
+    function selectFromServer() {
+        if ($('a.thumbnail.selected').length > 0) {
+            var url = $('a.thumbnail.selected img').attr("src");
+            $('.backImg').attr('src', url);
+            $("input[name=background_image]").val(url);
+            $('button[type=submit]').prop('disabled', false);
+            setTimeout(function () {
+                $("#background_image").trigger("special-change");
+            },100);
+            $('#myModal').modal('hide')
+        }
     }
 }(window.pta = window.pta || {}, jQuery));

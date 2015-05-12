@@ -116,6 +116,16 @@
 		
 		// Style the next/submit buttons in forms
 		$("form input[type=submit]").addClass("btn btn-primary btn-large");
+                
+                /**
+                 * Notificaion Style                 
+                 */
+                var notifyMessage = $(".am-info.am-notification").html();
+                var notifyCode = '<div class="tip alert alert-block alert-info fade in" data-tip="1">'+
+                                 '<button type="button" class="close" data-dismiss="alert">×</button>'+
+                                 notifyMessage+
+                                 '</div>';                
+                $(".am-info.am-notification").replaceWith(notifyCode);
 	}
 
 	function reformatErrors(errors) {
